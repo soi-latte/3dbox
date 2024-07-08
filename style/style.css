@@ -1,0 +1,45 @@
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #f2f2f2;
+}
+
+#tooltip {color: #1473e630; transition: all 0.25s ease-out; font-size: 1.6rem; background: transparent; display: block; position: absolute; top: -3.2rem; left: 0; font-family: 'Roboto', sans-serif; font-weight: 600;}
+#frame {
+    width: 30rem;
+    height: 45rem;
+    transition: transform 200ms;
+    position: relative;
+}
+#frame:hover { transform: scale3d(1.05, 1.05, 1.05); }
+#frame:hover .profile {filter: grayscale(0);}
+#frame:hover .profile-info {color: #1473e6;}
+
+#card {
+    width: 100%;
+    height: 100%;
+    border-radius: 9px;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition-duration: 250ms;
+    transition-property: transform, box-shadow;
+    transition-timing-function: ease-out;
+    overflow: hidden;
+}
+
+#light {
+    position: absolute;
+    top:0; left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 9px;
+}
+
+.profile {transition: all 0.3s ease-in-out; position: absolute; right: -1.2rem; bottom: 0; width: 16rem; height: 28rem; background: url('../img/profile.webp') no-repeat; filter: grayscale(0.6); background-size: 100% auto;}
+.profile-info {padding: 2.4rem 0 0 2.4rem; box-sizing: border-box; color: #00000080;}
+.profile-info h2 {font-size: 2rem; font-weight: 700; margin: 0 0 1rem;}
+.profile-info h3 {font-size: 1.6rem; font-weight: 300;}
+.profile-info p {font-size: 1.5rem; font-weight: 300;}
