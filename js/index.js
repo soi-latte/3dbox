@@ -39,3 +39,4 @@ window.addEventListener('resize', () => {
     width = rect.width
     height = rect.height
 })
+

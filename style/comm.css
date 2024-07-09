@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 html {font-size:62.5%; font-family: 'Roboto', sans-serif;}
-body {width: 100%; display: block; background: url('../img/bg.webp') repeat;}
+body {width: 100%; display: block; }
 #loading {
     display: none;
     position: fixed;
@@ -30,4 +30,4 @@ body {width: 100%; display: block; background: url('../img/bg.webp') repeat;}
     }
 }
 
-header {}
+header {width: 100%; position: fixed; top: 0; left: 0; background: transparent;}
