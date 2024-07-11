@@ -1,22 +1,12 @@
-main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100vh;
-    background-color: #f2f2f2;
-}
-
-#tooltip {color: #1473e630; transition: all 0.25s ease-out; font-size: 1.6rem; background: transparent; display: block; position: absolute; top: -3.2rem; left: 0; font-family: 'Roboto', sans-serif; font-weight: 600;}
-#frame {
-    width: 30rem;
-    height: 45rem;
-    transition: transform 200ms;
-    position: relative;
-}
+.main-frame {display: flex; align-items: center; justify-content: center; width: 100%; height: 100vh; background-color: #f2f2f2; position: relative;}
+.main-left {width: 30rem; height: 45rem;}
+.main-right {}
+#tooltip {color: #1473e6; transition: all 0.25s ease-out; font-size: 1.6rem; background: transparent; display: block; position: absolute; top: -3.2rem; left: 0; font-family: 'Roboto', sans-serif; font-weight: 600;}
+#frame {width: 100%; height: 100%; transition: transform 200ms; position: relative; margin: 0 24rem 0 0;}
 #frame:hover { transform: scale3d(1.05, 1.05, 1.05); }
 #frame:hover .profile {filter: grayscale(0);}
 #frame:hover .profile-info {color: #1473e6;}
+#frame:hover #tooltip {color: #1473e630;}
 
 #card {
     width: 100%;
@@ -43,3 +33,6 @@ main {
 .profile-info h2 {font-size: 2rem; font-weight: 700; margin: 0 0 1rem;}
 .profile-info h3 {font-size: 1.6rem; font-weight: 300;}
 .profile-info p {font-size: 1.5rem; font-weight: 300;}
+
+.main-section {width: 100%; height: 100vh;}
+
