@@ -105,9 +105,12 @@ const appSwiper = new Swiper('.appSlide', {
 
 const dashboardSwiper = new Swiper('.dashboardSlide', {
     loop: false,
-    speed: 3500,
+    speed: 1000,
     slidesPerView: 1,
-    autoplay: true,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
     effect: 'cube',
     cubeEffect: {
         slideShadows : true,
@@ -119,23 +122,38 @@ const dashboardSwiper = new Swiper('.dashboardSlide', {
 
 const popSwiper = new Swiper('.popSlide', {
     loop: false,
-    speed: 3500,
-    slidesPerView: 1,
-    autoplay: true,
-    effect: 'panorama',
-    panoramaEffect: {
-        depth: 200,
-        rotate: 30,
-        transitionDuration: 300
+    speed: 1000,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
     },
-
+    effect: 'creative',
+    slidesPerView: 2,
+    centeredSlides: true,
+    creativeEffect: {
+        limitProgress:1,
+        prev: {
+            opacity:1,
+            scale: 0.9,
+            rotate:[0,25,0],
+            translate: ["-50%", 0, -200],
+        },
+        next: {
+            scale: 0.9,
+            rotate:[0,-25,0],
+            translate: ["50%", 0, -200],
+        },
+    },
 })
 
 const erpSwiper = new Swiper('.erpSlide', {
     loop: false,
-    speed: 3500,
+    speed: 1000,
     slidesPerView: 1,
-    autoplay: true,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
     effect: 'coverflow',
     coverflowEffect: {
         depth: 100,
