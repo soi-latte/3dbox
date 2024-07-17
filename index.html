@@ -10,13 +10,15 @@
     <link rel="stylesheet" href="./style/swiper.min.css">
     <link rel="stylesheet" href="./style/comm.css">
     <link rel="stylesheet" href="./style/style.css">
+    <script src="./js/gsap.min.js"></script>
+    <script src="./js/scrollTrigger.min.js"></script>
     <script src="./js/swiper.min.js"></script>
 </head>
 <body>
 <header>
     <div class="header-container">
         <h1>
-
+            <a href="/"><img src="./img/logo.png" alt="박소이 로고"></a>
         </h1>
     </div>
 </header>
@@ -42,7 +44,6 @@
                 <p>웹 에이전시와 솔루션 회사에서 다양한 경험을 쌓아왔습니다. 웹 접근성과 반응형 모두 사용자를 1순위로 생각하고 고려하여 만듭니다.</p>
                 <p>디자인과 개발 그 사이 어딘가 원활한 협업을 위해 노력합니다.</p>
                 <p>아름답지만 사용성이 편한 UI/UX를 만드는데 관심이 있습니다.</p>
-                <a href="#n">자기소개 보러가기</a>
             </div>
         </div>
     </div>
@@ -53,32 +54,62 @@
                 <h2>반응형 웹 솔루션</h2>
             </div>
             <div class="flex-layout">
-                <div class="flex-box visual-box">
-                    <div class="thumb"><img src="" alt=""></div>
+                <div class="flex-box visual-box aToZ">
+                    <div class="thumb"><img src="./img/pj1/p1.png" alt=""></div>
                     <h3>인터넷강의 솔루션</h3>
-                    <p>Jquery / PHP</p>
+                    <p>Javascript / PHP</p>
                 </div>
-                <div class="flex-box visual-box">
-                    <div class="thumb"><img src="" alt=""></div>
-                    <h3>관리자 폼메일 발송</h3>
-                    <p>HTML / CSS</p>
+                <div class="flex-box visual-box aToZ">
+                    <div class="thumb"><img src="./img/pj1/p4.png" alt=""></div>
+                    <h3>학회•협회 솔루션</h3>
+                    <p>j-query / PHP</p>
                 </div>
-                <div class="flex-box visual-box">
-                    <div class="thumb"><img src="" alt=""></div>
+                <div class="flex-box visual-box aToZ">
+                    <div class="thumb"><img src="./img/pj1/p6.png" alt=""></div>
                     <h3>쇼핑몰 솔루션</h3>
-                    <p>Jquery / PHP</p>
+                    <p>j-query / PHP</p>
                 </div>
-                <div class="flex-box visual-box">
-                    <div class="thumb"><img src="" alt=""></div>
-                    <h3>스케줄 웹 솔루션</h3>
-                    <p>Jquery / PHP</p>
+                <div class="flex-box visual-box aToZ">
+                    <div class="thumb"><img src="./img/pj1/p3.png" alt=""></div>
+                    <h3>기업•프렌차이즈 홈페이지</h3>
+                    <p>Javascript / PHP</p>
                 </div>
             </div>
         </section>
         <section class="sc2 main-section">
+            <div class="section-bg">
+                <svg id="svgSc2" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1697.62 287">
+                    <defs>
+                        <style>
+                            .cls-1 {
+                                fill: #fff;
+                                stroke-width: 0px;
+                            }
+                        </style>
+                    </defs>
+                    <path class="cls-1"
+                          d="M193.2,33.88v196h-66.08v-72.24h-61.04v72.24H0V33.88h66.08v69.44h61.04V33.88h66.08Z"/>
+                    <path class="cls-1"
+                          d="M393.68,76.72l-63,156.24c-16.8,42-41.44,54.04-73.92,54.04-16.8,0-36.12-5.32-46.48-13.72l21-43.4c6.16,4.76,14.84,8.12,22.4,8.12s12.32-2.24,15.68-6.16l-64.4-155.12h64.96l31.64,82.04,32.2-82.04h59.92Z"/>
+                    <path class="cls-1"
+                          d="M579.59,153.16c0,49.28-33.88,79.52-73.92,79.52-19.04,0-32.76-5.04-42-15.4v12.6h-60.2V22.12h63.28v64.96c9.24-8.96,22.12-13.16,38.92-13.16,40.04,0,73.92,29.96,73.92,79.24ZM515.47,153.16c0-19.88-10.92-29.96-24.92-29.96s-24.92,10.08-24.92,29.96,10.92,30.24,24.92,30.24,24.92-10.36,24.92-30.24Z"/>
+                    <path class="cls-1"
+                          d="M709.23,73.92v56c-5.6-.84-9.52-1.12-14-1.12-19.04,0-32.48,8.68-32.48,33.04v68.04h-63.28V76.72h60.2v16.52c11.2-12.88,28.28-19.32,49.56-19.32Z"/>
+                    <path class="cls-1"
+                          d="M720.71,32.2c0-18.2,14.84-32.2,38.08-32.2s38.08,12.88,38.08,31.08c0,19.32-14.84,33.32-38.08,33.32s-38.08-14-38.08-32.2ZM727.15,76.72h63.28v153.16h-63.28V76.72Z"/>
+                    <path class="cls-1"
+                          d="M987.83,22.12v207.76h-60.2v-12.6c-9.24,10.36-22.96,15.4-42,15.4-40.04,0-73.92-30.24-73.92-79.52s33.88-79.24,73.92-79.24c16.8,0,29.68,4.2,38.92,13.16V22.12h63.28ZM925.67,153.16c0-19.88-10.92-29.96-24.92-29.96s-24.92,10.08-24.92,29.96,10.92,30.24,24.92,30.24,24.92-10.36,24.92-30.24Z"/>
+                    <path class="cls-1"
+                          d="M1235.34,195.72h-74.48l-13.16,34.16h-67.2l85.68-196h64.96l85.68,196h-68.32l-13.16-34.16ZM1217.14,148.12l-19.04-49.28-19.04,49.28h38.08Z"/>
+                    <path class="cls-1"
+                          d="M1501.62,153.44c0,49.28-33.88,79.24-73.92,79.24-16.8,0-29.68-4.2-38.92-13.16v64.68h-63.28V76.72h60.2v12.6c9.24-10.36,22.96-15.4,42-15.4,40.04,0,73.92,30.24,73.92,79.52ZM1437.5,153.44c0-19.88-10.92-30.24-24.92-30.24s-24.92,10.36-24.92,30.24,10.92,29.96,24.92,29.96,24.92-10.08,24.92-29.96Z"/>
+                    <path class="cls-1"
+                          d="M1697.62,153.44c0,49.28-33.88,79.24-73.92,79.24-16.8,0-29.68-4.2-38.92-13.16v64.68h-63.28V76.72h60.2v12.6c9.24-10.36,22.96-15.4,42-15.4,40.04,0,73.92,30.24,73.92,79.52ZM1633.5,153.44c0-19.88-10.92-30.24-24.92-30.24s-24.92,10.36-24.92,30.24,10.92,29.96,24.92,29.96,24.92-10.08,24.92-29.96Z"/>
+                </svg>
+            </div>
             <div class="section-tit">
                 <span>Jquery / php</span>
-                <h2>하이브리드웹앱 Pobls</h2>
+                <h2>하이브리드앱 Pobls</h2>
             </div>
             <div class="slide-container visual-box">
                 <div class="swiper-container appSlide">
@@ -163,6 +194,9 @@
                                     <div class="swiper-slide">
                                         <div class="img"><img src="./img/pj3/dashboard3.png" alt=""></div>
                                     </div>
+                                    <div class="swiper-slide">
+                                        <div class="img"><img src="./img/pj3/dashboard4.png" alt=""></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -192,7 +226,16 @@
                                             <img src="./img/pj3/erp3.jpg" alt="">
                                         </div>
                                     </div>
-
+                                    <div class="swiper-slide">
+                                        <div class="img">
+                                            <img src="./img/pj3/erp4.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="img">
+                                            <img src="./img/pj3/erp5.png" alt="">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -216,9 +259,6 @@
                                     <div class="swiper-slide">
                                         <div class="img"><img src="./img/pj3/erp9.jpg" alt=""></div>
                                     </div>
-                                    <div class="swiper-slide">
-                                        <div class="img"><img src="./img/pj3/erp10.jpg" alt=""></div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -227,10 +267,26 @@
             </div>
         </section>
     </div>
+    <div class="bottom-container">
+        <div class="svg-container">
+            <div class="spacer"></div>
+            <a href="https://www.notion.so/4da1d32eda6a4b989ac9cb8e87913779?pvs=4" target="_blank">
+                <svg id="notionSvg" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                            d="M3.25781 3.11684C3.67771 3.45796 3.83523 3.43193 4.62369 3.37933L12.0571 2.93299C12.2147 2.93299 12.0836 2.77571 12.0311 2.74957L10.7965 1.85711C10.56 1.67347 10.2448 1.46315 9.64083 1.51576L2.44308 2.04074C2.18059 2.06677 2.12815 2.19801 2.2327 2.30322L3.25781 3.11684ZM3.7041 4.84917V12.6704C3.7041 13.0907 3.91415 13.248 4.38693 13.222L12.5562 12.7493C13.0292 12.7233 13.0819 12.4341 13.0819 12.0927V4.32397C13.0819 3.98306 12.9508 3.79921 12.6612 3.82545L4.12422 4.32397C3.80918 4.35044 3.7041 4.50803 3.7041 4.84917ZM11.7688 5.26872C11.8212 5.50518 11.7688 5.74142 11.5319 5.76799L11.1383 5.84641V11.6205C10.7965 11.8042 10.4814 11.9092 10.2188 11.9092C9.79835 11.9092 9.69305 11.7779 9.37812 11.3844L6.80345 7.34249V11.2532L7.61816 11.437C7.61816 11.437 7.61816 11.9092 6.96086 11.9092L5.14879 12.0143C5.09615 11.9092 5.14879 11.647 5.33259 11.5944L5.80546 11.4634V6.29276L5.1489 6.24015C5.09625 6.00369 5.22739 5.66278 5.5954 5.63631L7.53935 5.50528L10.2188 9.5998V5.97765L9.53564 5.89924C9.4832 5.61018 9.69305 5.40028 9.95576 5.37425L11.7688 5.26872ZM1.83874 1.33212L9.32557 0.780787C10.245 0.701932 10.4815 0.754753 11.0594 1.17452L13.4492 2.85424C13.8436 3.14309 13.975 3.22173 13.975 3.53661V12.7493C13.975 13.3266 13.7647 13.6681 13.0293 13.7203L4.33492 14.2454C3.78291 14.2717 3.52019 14.193 3.23111 13.8253L1.47116 11.5419C1.1558 11.1216 1.02466 10.8071 1.02466 10.4392V2.25041C1.02466 1.77825 1.23504 1.38441 1.83874 1.33212Z"
+                            fill="#000000"
+                    />
+                </svg>
+            </a>
+            <div class="spacer"></div>
+            <div class="notion--text">자세한 경력기술과 프로젝트는 노션에서 보실 수 있습니다.</div>
+        </div>
+    </div>
 </main>
 <footer>
     <div class="footer-container">
-        <p class="copy">© Soyee Park 2024</p>
+        <p class="copy">ⓒ 2024. </p>
+        <a href="mailTo:puiux@kakao.com">puiux@kakao.com</a>
     </div>
 </footer>
 </body>

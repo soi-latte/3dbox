@@ -89,7 +89,7 @@ new visualAni;
 const appSwiper = new Swiper('.appSlide', {
     // Optional parameters
     loop: true,
-    slidesPerView: 7,
+    slidesPerView: 3,
     autoplay: {
         delay: 0,
         pauseOnMouseEnter: false,
@@ -98,8 +98,12 @@ const appSwiper = new Swiper('.appSlide', {
     speed: 6000,
     allowTouchMove: false,
     breakpoints: {
-        320: {},
-        640: {}
+        640: {
+            slidesPerView: 4,
+        },
+        900: {
+            slidesPerView: 6,
+        }
     }
 });
 
@@ -113,7 +117,7 @@ const dashboardSwiper = new Swiper('.dashboardSlide', {
     },
     effect: 'cube',
     cubeEffect: {
-        slideShadows : true,
+        slideShadows: true,
         shadow: true,
         shadowOffset: 20,
         shadowScale: 0.94
@@ -128,19 +132,24 @@ const popSwiper = new Swiper('.popSlide', {
         disableOnInteraction: false,
     },
     effect: 'creative',
-    slidesPerView: 2,
+    slidesPerView: 1.8,
+    breakpoints: {
+        640: {
+            slidesPerView: 1.4,
+        }
+    },
     centeredSlides: true,
     creativeEffect: {
-        limitProgress:1,
+        limitProgress: 1,
         prev: {
-            opacity:1,
+            opacity: 1,
             scale: 0.9,
-            rotate:[0,25,0],
+            rotate: [0, 25, 0],
             translate: ["-50%", 0, -200],
         },
         next: {
             scale: 0.9,
-            rotate:[0,-25,0],
+            rotate: [0, -25, 0],
             translate: ["50%", 0, -200],
         },
     },
@@ -166,7 +175,68 @@ const erpSwiper = new Swiper('.erpSlide', {
     },
 
 
-})
+});
+
+gsap.to(".aToZ", {
+    yPercent: -20,
+    ease: "none",
+    scrollTrigger: {
+        trigger: ".sc1 .flex-layout",
+        // start: "top bottom", // the default values
+        // end: "bottom top",
+        scrub: true
+    },
+});
+
+
+gsap.from("#svgSc2", {
+    y: '-200%',
+    opacity: 1,
+    scale: 1.12,
+    ease: "expo",
+    scrollTrigger: {
+        trigger: "#svgSc2",
+        start: "top center",
+        end: "bottom top",
+        // pin: true,
+        scrub: true,
+    }
+});
+
+function updateSVGWidth() {
+    const svg = document.getElementById('notionSvg');
+    const notionText = document.querySelector('.notion--text');
+    const svgWidth = parseFloat(getComputedStyle(svg).width);
+    const bodyWidth = document.body.clientWidth;
+
+    gsap.to(svg, {
+        scrollTrigger: {
+            trigger: "#notionSvg",
+            start: "top 100%",
+            end: () => document.documentElement.scrollHeight - window.innerHeight,
+            scrub: true,
+            invalidateOnRefresh: true,
+        },
+        x: bodyWidth - (svgWidth * 2),
+        scale: 2,
+        rotation: 360,
+        ease: "power1.inOut",
+    });
+
+    // gsap.to(notionText, {
+    //     duration: 1.5,
+    //     ease: "power2.out",
+    //     scrollTrigger: {
+    //         trigger: svg,
+    //         start: "top 60%",
+    //         end: "top 20%",
+    //         scrub: true,
+    //     }
+    // });
+}
+
+window.addEventListener('resize', updateSVGWidth);
+window.addEventListener('load', updateSVGWidth);
 
 
 
